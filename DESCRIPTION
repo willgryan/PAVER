@@ -1,12 +1,39 @@
 Package: PAVER
-Title: What the Package Does (One Line, Title Case)
+Title: PAVER: Pathway Analysis Visualization with Embedding
+    Representations
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("William G", "Ryan V", , "billyryan543@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-4868-4002"))
+Description: Summary visualization using embedding representations to
+    reveal underlying themes within sets of Gene Ontology terms.
+License: GPL (>= 3) + file LICENSE
+Imports: 
+    circlize,
+    ComplexHeatmap,
+    dplyr,
+    dynamicTreeCut,
+    forcats,
+    ggplot2,
+    ggpubr,
+    ggrepel,
+    grid,
+    magrittr,
+    purrr,
+    randomcoloR,
+    rlang,
+    smacof,
+    stringr,
+    tibble,
+    tidyr,
+    umap
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
+LazyData: true

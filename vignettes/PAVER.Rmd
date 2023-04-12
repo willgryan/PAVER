@@ -1,0 +1,40 @@
+---
+title: "PAVER"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{PAVER}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = F,
+  warning = F,
+  echo = T
+)
+```
+
+```{r setup}
+library(PAVER)
+
+input = gsea_example
+
+embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
+
+ontology_index = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/ontology_2023-03-06.RDS"))
+```
+
+```{r}
+PAVER_result = prepare_data(input, embeddings, ontology_index)
+
+PAVER_result = generate_themes(PAVER_result, minClusterSize = 30)
+```
+
+```{r}
+PAVER_combined_plot = PAVER_combined_plot(PAVER_result)
+
+PAVER_combined_plot
+```
