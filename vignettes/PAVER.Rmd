@@ -30,7 +30,7 @@ ontology_index = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/
 ```{r}
 PAVER_result = prepare_data(input, embeddings, ontology_index)
 
-PAVER_result = generate_themes(PAVER_result, minClusterSize = 30)
+PAVER_result = generate_themes(PAVER_result, minClusterSize = 40)
 ```
 
 ```{r}

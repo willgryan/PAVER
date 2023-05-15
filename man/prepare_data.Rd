@@ -4,7 +4,7 @@
 \alias{prepare_data}
 \title{Prepare Gene Ontology enrichment analysis results for downstream theme generation and summary visualization}
 \usage{
-prepare_data(input, embeddings, ontology_index, unit = "NES", seed = 123)
+prepare_data(input, embeddings, ontology_index)
 }
 \arguments{
 \item{input}{A data frame in wide format containing the Gene Ontology enrichment analysis results. The first column is expected to be GO IDs, e.g., GO:0000001}
@@ -12,13 +12,9 @@ prepare_data(input, embeddings, ontology_index, unit = "NES", seed = 123)
 \item{embeddings}{A matrix containing the precomputed Gene Ontology embeddings}
 
 \item{ontology_index}{An ontology_index object prepared from the core Gene Ontology used to compute embeddings}
-
-\item{unit}{A character describing the unit of the enrichment analysis results}
-
-\item{seed}{An integer setting the seed for UMAP}
 }
 \value{
-A PAVER_result list with the prepared data, embedding matrix, GO Term ID to definition mappings, and computed UMAP
+A PAVER_result list with the prepared data ready for theme generation
 }
 \description{
 This function prepares the results of Gene Ontology enrichment analysis for downstream theme generation and visualization by using precomputed embeddings of the core Gene Ontology.
