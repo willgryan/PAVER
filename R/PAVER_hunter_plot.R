@@ -4,6 +4,7 @@
 #' with clustering and color-coded values based on the direction of regulation.
 #'
 #' @param PAVER_result a list containing the output of PAVER analysis
+#' @param unit optionally, the unit of enrichment analysis for the figure legend title.
 #'
 #' @return A heatmap of the expression data with clustering and color-coded values based on the direction of regulation.
 #'
@@ -11,7 +12,7 @@
 #' TRUE
 #'
 #' @export
-PAVER_hunter_plot <- function(PAVER_result) {
+PAVER_hunter_plot <- function(PAVER_result, unit=NULL) {
 
   data = PAVER_result$prepared_data %>%
     dplyr::inner_join(PAVER_result$clustering %>%
@@ -44,7 +45,7 @@ PAVER_hunter_plot <- function(PAVER_result) {
   }
 
   lgd = ComplexHeatmap::Legend(col_fun = col_fun,
-               title = PAVER_result$unit,
+               title = unit,
                at = at,
                labels = labels,
                direction = "horizontal",

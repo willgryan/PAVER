@@ -4,10 +4,12 @@
 \alias{PAVER_combined_plot}
 \title{PAVER_combined_plot}
 \usage{
-PAVER_combined_plot(PAVER_result)
+PAVER_combined_plot(PAVER_result, unit = NULL)
 }
 \arguments{
 \item{PAVER_result}{a list containing the output of PAVER analysis}
+
+\item{unit}{optionally, the unit of enrichment analysis for the figure legend title.}
 }
 \value{
 A combined ggplot2 figure consisting of the PAVER_cluster_plot, PAVER_regulation_plot,

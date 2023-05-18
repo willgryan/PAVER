@@ -5,6 +5,7 @@
 #' PAVER_interpretation_plot, and PAVER_hunter_plot.
 #'
 #' @param PAVER_result a list containing the output of PAVER analysis
+#' @param unit optionally, the unit of enrichment analysis for the figure legend title.
 #'
 #' @return A combined ggplot2 figure consisting of the PAVER_cluster_plot, PAVER_regulation_plot,
 #' PAVER_interpretation_plot, and PAVER_hunter_plot.
@@ -13,7 +14,7 @@
 #' TRUE
 #'
 #' @export
-PAVER_combined_plot <- function(PAVER_result) {
+PAVER_combined_plot <- function(PAVER_result, unit=NULL) {
   plot = ggpubr::ggarrange(
     PAVER_theme_plot(PAVER_result),
     PAVER_regulation_plot(PAVER_result),

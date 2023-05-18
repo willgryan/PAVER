@@ -4,10 +4,12 @@
 \alias{PAVER_hunter_plot}
 \title{PAVER_hunter_plot}
 \usage{
-PAVER_hunter_plot(PAVER_result)
+PAVER_hunter_plot(PAVER_result, unit = NULL)
 }
 \arguments{
 \item{PAVER_result}{a list containing the output of PAVER analysis}
+
+\item{unit}{optionally, the unit of enrichment analysis for the figure legend title.}
 }
 \value{
 A heatmap of the expression data with clustering and color-coded values based on the direction of regulation.
