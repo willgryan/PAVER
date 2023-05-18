@@ -61,6 +61,7 @@ PAVER_hunter_plot <- function(PAVER_result) {
                row_title_gp = grid::gpar(fontsize = 8),
                column_names_gp = grid::gpar(fontsize = 8),
                column_names_rot = 0,
+               column_names_centered = TRUE,
                row_title_rot = 0,
                row_title_side = "right",
                row_gap = grid::unit(2, "mm"),
