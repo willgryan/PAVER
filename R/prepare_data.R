@@ -37,7 +37,7 @@ prepare_data <- function(input, embeddings, ontology_index) {
   custom.config = umap::umap.defaults
   custom.config$random_state = 123
   custom.config$metric = "cosine"
-  custom.config$n_neighbors = 100
+  custom.config$n_neighbors = min(100, (nrow(embedding_mat) - 1))
 
   umap = umap::umap(embedding_mat %>% tibble::column_to_rownames("UniqueID"), custom.config)
 
