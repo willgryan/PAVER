@@ -37,7 +37,7 @@ PAVER_hunter_plot <- function(PAVER_result, unit=NULL) {
   } else {
     at = c(min, max)
     labels = c(round(min, 2), round(max, 2))
-    if(levels(data$Direction) == "Up") {
+    if(levels(data$Direction) == "+") {
       col_fun = circlize::colorRamp2(c(min, max), c("white", "red"))
     } else {
       col_fun = circlize::colorRamp2(c(min, max), c("white", "blue"))
