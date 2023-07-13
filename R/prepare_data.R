@@ -24,7 +24,7 @@ prepare_data <- function(input, embeddings, ontology_index) {
     tidyr::pivot_longer(cols = c(!"GOID"), names_to = "Group") %>%
     dplyr::filter(.data$value != 0) %>%
     dplyr::mutate(
-      Direction = factor(sign(.data$value), levels = c(-1, 1), labels = c("-", "+")),
+      Direction = factor(sign(.data$value), levels = c(-1, 1), labels = c("-", "+")) %>% droplevels(),
       UniqueID = paste0(.data$GOID, "_", .data$Group)) %>%
     dplyr::distinct(.data$UniqueID, .keep_all = T)
 
