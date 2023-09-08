@@ -31,7 +31,7 @@ prepare_data <- function(input, embeddings, ontology_index) {
   #Generate an embedding table keyed by unique pathway IDs
   embedding_mat = embeddings[prepared_data$GOID,] %>%
     magrittr::set_rownames(prepared_data$UniqueID) %>%
-    tibble::as_tibble(rownames = "UniqueID")
+    tibble::as_tibble(rownames = "UniqueID", .name_repair = "universal")
 
   #Compute the UMAP of the embedding matrix
   custom.config = umap::umap.defaults
