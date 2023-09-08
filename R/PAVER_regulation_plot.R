@@ -23,8 +23,7 @@ PAVER_regulation_plot <- function(PAVER_result) {
                         dplyr::select(.data$UniqueID, .data$Direction), by = "UniqueID")
 
   if(nlevels(plot_data$Direction) != 1) {
-    levels(plot_data$Direction) = c("Up", "Down") #Ensure labels and colors of direction are consistent
-    colors = c("red", "blue")
+    colors = c("blue", "red") #Ensure labels and colors of direction are consistent
   } else {
     if(levels(plot_data$Direction) == "Up") {
       colors = c("red")
