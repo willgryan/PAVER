@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^PAVER\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
