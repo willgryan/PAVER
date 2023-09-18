@@ -5,13 +5,13 @@
 #'
 #' @param mat A numeric matrix or data frame.
 #' @param root A logical value indicating whether to take the square root of the cosine dissimilarity
-#' matrix to obtain Euclidean distances. Default is FALSE.
+#' matrix. Default is FALSE.
 #'
 #' @return A dissimilarity matrix of class "dist" containing the cosine dissimilarity between each pair of rows.
 #'
 #' @examples
 #' TRUE
-cosine_dissimilarity <- function(mat, root = F) {
+cosine_dissimilarity <- function(mat, root = FALSE) {
   sim = mat / sqrt(rowSums(mat * mat))
   sim = sim %*% t(sim)
 
