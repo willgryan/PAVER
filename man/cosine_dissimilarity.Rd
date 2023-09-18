@@ -4,13 +4,13 @@
 \alias{cosine_dissimilarity}
 \title{Compute Cosine Dissimilarity Matrix}
 \usage{
-cosine_dissimilarity(mat, root = F)
+cosine_dissimilarity(mat, root = FALSE)
 }
 \arguments{
 \item{mat}{A numeric matrix or data frame.}
 
 \item{root}{A logical value indicating whether to take the square root of the cosine dissimilarity
-matrix to obtain Euclidean distances. Default is FALSE.}
+matrix. Default is FALSE.}
 }
 \value{
 A dissimilarity matrix of class "dist" containing the cosine dissimilarity between each pair of rows.
