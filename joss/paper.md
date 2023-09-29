@@ -50,7 +50,7 @@ PAVER uses vector embeddings to help interpret pathway analyses. Embeddings enco
 
 ![PAVER uses numerical representations of pathways to find functionally related clusters.\label{fig:overview}](figures/overview.png)
 
-PAVER was designed to be easy to use by researchers and students with minimal coding experience. PAVER has already been using in a number of scientific publications to aid in the intepretation of pathway analyses [@william_ryan_2023_8156248, @RN78]. We have pre-computed vector representations for Gene Ontology using the recent anc2vec model [@RN13], available here: https://github.com/willgryan/PAVER_embeddings. However, embeddings for any pathway database can be used with PAVER.
+PAVER was designed to be easy to use by researchers and students with minimal coding experience. PAVER has already been using in a number of scientific publications to aid in the intepretation of pathway analyses [@william_ryan_2023_8156248; @RN78]. We have pre-computed vector representations for Gene Ontology using the recent anc2vec model [@RN13], available here: https://github.com/willgryan/PAVER_embeddings. However, embeddings for any pathway database can be used with PAVER.
 
 # Licensing and Availability
 
