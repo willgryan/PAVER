@@ -30,3 +30,5 @@ if (!requireNamespace("devtools", quietly = TRUE))
 devtools::install_github("willgryan/PAVER")
 ```
 
+## Usage
+
