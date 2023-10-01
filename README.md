@@ -6,8 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-PAVER allows for summary interpretation of perceptible omics outputs,
-like pathway analyses.
+PAVER allows for summary interpretation and visualization of pathway
+analyses.
 
 ## Installation
 
@@ -15,7 +15,12 @@ You can install the development version of PAVER from
 [GitHub](https://github.com/) with:
 
 ``` r
-if (!requireNamespace("devtools", quietly = TRUE))
-    install.packages("devtools")
-devtools::install_github("willgryan/PAVER")
+if (!requireNamespace("remotes", quietly = TRUE))
+    install.packages("remotes")
+remotes::install_github("willgryan/PAVER")
 ```
+
+## Usage
+
+PAVER is designed to work with the output of pathway analysis tools. The
+package includes a vignette with an example dataset.

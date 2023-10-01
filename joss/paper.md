@@ -4,7 +4,7 @@ tags:
 - R
 - bioinformatics
 - pathway analysis
-date: "3 September 2023"
+date: "3 September 1997"
 output: pdf_document
 authors:
 - name: "William George Ryan V"
@@ -18,7 +18,7 @@ authors:
   orcid: ""
   affiliation: 1
 - name: "Xiaolu Zhang"
-  orcid: ""
+  orcid: "0000-0001-5595-7270"
   affiliation: 2
 - name: "Rammohan Shukla"
   orcid: "0000-0001-5776-2506"
@@ -30,7 +30,7 @@ bibliography: paper.bib
 affiliations:
 - name: Department of Neurosciences, College of Medicine and Life Sciences, University of Toledo, Toledo, OH, USA
   index: 1
-- name: LA, USA
+- name: Department of Microbiology and Immunology, Louisiana State University Health Sciences Center, Shreveport, LA, USA
   index: 2
 - name: Department of Zoology & Physiology, College of Agriculture, Life Sciences and Natural Resources, University of Wyoming, Laramie, WY, USA
   index: 3
@@ -46,7 +46,7 @@ Multiomics is used extensively in biological research today. However, the develo
 
 # Overview
 
-PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be clustered and visualized \autoref{fig:overview}. To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster, which captures it's overall meaning [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group.
+PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be clustered and visualized (\autoref{fig:overview}). To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster to capture it's overall meaning [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group.
 
 ![PAVER uses numerical representations of pathways to find functionally related clusters.\label{fig:overview}](figures/overview.png)
 
@@ -54,7 +54,7 @@ PAVER was designed to be easy to use by researchers and students with minimal co
 
 # Licensing and Availability
 
-The PAVER R package is licensed under the GNU General Public License v3.0. It can be installed using remotes::install_github("willgryan/PAVER"). All code is open-source and hosted on GitHub. Report bugs using the issue tracker at https://github.com/willgryan/PAVER/issues/.
+The PAVER R package is licensed under the GNU General Public License v3.0. It can be installed using remotes::install_github("willgryan/PAVER"). All code, including a vignette with an example dataset, is open-source and hosted on GitHub. Report bugs using the issue tracker at https://github.com/willgryan/PAVER/issues/.
 
 # Acknowledgements
 
