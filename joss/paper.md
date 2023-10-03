@@ -46,15 +46,15 @@ Multiomics is used extensively in biological research today. However, the develo
 
 # Overview
 
-PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be clustered and visualized (\autoref{fig:overview}). To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster to capture it's overall meaning [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group.
+PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be clustered and visualized (\autoref{fig:overview}). To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster to capture it's overall meaning into a single numerical representation [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group.
 
 ![PAVER uses numerical representations of pathways to find functionally related clusters.\label{fig:overview}](figures/overview.png)
 
-PAVER was designed to be easy to use by researchers and students with minimal coding experience. PAVER has already been using in a number of scientific publications to aid in the intepretation of pathway analyses [@william_ryan_2023_8156248; @RN78]. We have pre-computed vector representations for Gene Ontology using the recent anc2vec model [@RN13], available here: https://github.com/willgryan/PAVER_embeddings. However, embeddings for any pathway database can be used with PAVER.
+PAVER was designed to be easy to use by researchers and students with minimal coding experience. PAVER has already been using in a number of scientific publications to aid in the intepretation of pathway analyses [@william_ryan_2023_8156248; @RN78]. We have pre-computed vector representations for Gene Ontology [@RN68] using the recent anc2vec model [@RN13], available here: https://github.com/willgryan/PAVER_embeddings. However, embeddings for any pathway database can be used with PAVER.
 
-# Licensing and Availability
+# Licensing, Availability and Usage
 
-The PAVER R package is licensed under the GNU General Public License v3.0. It can be installed using remotes::install_github("willgryan/PAVER"). All code, including a vignette with an example dataset, is open-source and hosted on GitHub. Report bugs using the issue tracker at https://github.com/willgryan/PAVER/issues/.
+The PAVER R package is licensed under the GNU General Public License v3.0. It can be installed using remotes::install_github("willgryan/PAVER"). All code, including an instructional vignette with an example dataset, is open-source and hosted on GitHub. Report bugs using the issue tracker at https://github.com/willgryan/PAVER/issues/.
 
 # Acknowledgements
 
