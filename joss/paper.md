@@ -7,15 +7,15 @@ tags:
 date: "3 September 1997"
 output: pdf_document
 authors:
-- name: "William George Ryan V"
+- name: "William G Ryan V"
   orcid: "0000-0003-4868-4002"
   corresponding: yes
   affiliation: 1
 - name: "Ali Sajid Imami"
   orcid: "0000-0003-3684-3539"
   affiliation: 1
-- name: "Hunter M. Eby"
-  orcid: ""
+- name: "Hunter Eby"
+  orcid: "0000-0002-9029-9768"
   affiliation: 1
 - name: "Xiaolu Zhang"
   orcid: "0000-0001-5595-7270"
