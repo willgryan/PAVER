@@ -12,10 +12,10 @@ test_that("prepare_data works correctly", {
 
   embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
 
-  ontology_index = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/ontology_2023-03-06.RDS"))
+  term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
 
   # Test function
-  result <- prepare_data(input, embeddings, ontology_index)
+  result <- prepare_data(input, embeddings, term2name)
 
   # Verify output structure
   expect_type(result, "list")

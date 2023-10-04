@@ -10,9 +10,9 @@ test_that("PAVER_export works correctly", {
 
   embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
 
-  ontology_index = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/ontology_2023-03-06.RDS"))
+  term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
 
-  PAVER_result <- prepare_data(input, embeddings, ontology_index)
+  PAVER_result = prepare_data(input, embeddings, term2name)
 
   PAVER_result <- generate_themes(PAVER_result, minClusterSize = 40)
 

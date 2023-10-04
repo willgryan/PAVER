@@ -1,10 +1,10 @@
-#' Prepare Gene Ontology enrichment analysis results for downstream theme generation and summary visualization
+#' Prepare pathway analysis results for downstream theme generation and summary visualization
 #'
-#' This function prepares the results of Gene Ontology enrichment analysis for downstream theme generation and visualization by using precomputed embeddings of the core Gene Ontology.
+#' This function prepares the results of pathway analysis for downstream theme generation and visualization using precomputed embeddings.
 #
-#' @param input A data frame in wide format containing the Gene Ontology enrichment analysis results. The first column is expected to be GO IDs, e.g., GO:0000001
-#' @param embeddings A matrix containing the precomputed Gene Ontology embeddings
-#' @param ontology_index An ontology_index object prepared from the core Gene Ontology used to compute embeddings
+#' @param input A data frame in wide format containing the pathway analysis results. The first column is expected to be term IDs, e.g. GO:0000001, while the remaining columns are expected to be numeric values representing the enrichment of each term in each group.
+#' @param embeddings A matrix containing the precomputed embeddings of the input terms.
+#' @param term2name A data frame containing two columns that map pathway term IDs to pathway term names.
 #'
 #' @return A PAVER_result list with the prepared data ready for theme generation
 #'
@@ -12,7 +12,7 @@
 #' TRUE
 #'
 #' @export
-prepare_data <- function(input, embeddings, ontology_index) {
+prepare_data <- function(input, embeddings, term2name) {
 
   #Transform wide format input to long form
   #Determine direction of enrichment from input value
@@ -42,9 +42,7 @@ prepare_data <- function(input, embeddings, ontology_index) {
   umap = umap::umap(embedding_mat %>% tibble::column_to_rownames("UniqueID"), custom.config)
 
   #Generate a GO ID to GO Term mapping table
-  goterms_df = ontology_index %>%
-    purrr::pluck("name") %>%
-    tibble::enframe() %>%
+  goterms_df = term2name %>%
     dplyr::rename(GOID = 1, Term = 2) %>%
     dplyr::filter(.data$GOID %in% prepared_data$GOID)
 

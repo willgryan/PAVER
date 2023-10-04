@@ -2,22 +2,22 @@
 % Please edit documentation in R/prepare_data.R
 \name{prepare_data}
 \alias{prepare_data}
-\title{Prepare Gene Ontology enrichment analysis results for downstream theme generation and summary visualization}
+\title{Prepare pathway analysis results for downstream theme generation and summary visualization}
 \usage{
-prepare_data(input, embeddings, ontology_index)
+prepare_data(input, embeddings, term2name)
 }
 \arguments{
-\item{input}{A data frame in wide format containing the Gene Ontology enrichment analysis results. The first column is expected to be GO IDs, e.g., GO:0000001}
+\item{input}{A data frame in wide format containing the pathway analysis results. The first column is expected to be term IDs, e.g. GO:0000001, while the remaining columns are expected to be numeric values representing the enrichment of each term in each group.}
 
-\item{embeddings}{A matrix containing the precomputed Gene Ontology embeddings}
+\item{embeddings}{A matrix containing the precomputed embeddings of the input terms.}
 
-\item{ontology_index}{An ontology_index object prepared from the core Gene Ontology used to compute embeddings}
+\item{term2name}{A data frame containing two columns that map pathway term IDs to pathway term names.}
 }
 \value{
 A PAVER_result list with the prepared data ready for theme generation
 }
 \description{
-This function prepares the results of Gene Ontology enrichment analysis for downstream theme generation and visualization by using precomputed embeddings of the core Gene Ontology.
+This function prepares the results of pathway analysis for downstream theme generation and visualization using precomputed embeddings.
 }
 \examples{
 TRUE

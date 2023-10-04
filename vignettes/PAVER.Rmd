@@ -17,6 +17,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Overview
+
+PAVER is an R package for the visualization and interpretation of pathway analysis results. PAVER uses a combination of hierarchical clustering, dimensionality reduction, and visualization techniques to identify and characterize similar pathways in a given dataset. PAVER is designed to be used with any GSEA tool that produces a ranked list of pathways, like [GSEA](https://www.gsea-msigdb.org/gsea/index.jsp) or [Enrichr](https://maayanlab.cloud/Enrichr/).
+
+# Data Preparation
+
+PAVER requires 3 inputs: a ranked list of pathways, a matrix of pathway embeddings, and a mapping of pathway IDs to pathway names. The following code chunk demonstrates how to prepare these inputs using the example data provided in the PAVER package.
+
 ```{r setup}
 library(PAVER)
 
@@ -24,17 +32,68 @@ input = gsea_example
 
 embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
 
-ontology_index = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/ontology_2023-03-06.RDS"))
+term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
+
+PAVER_result = prepare_data(input, embeddings, term2name)
+
 ```
 
-```{r}
-PAVER_result = prepare_data(input, embeddings, ontology_index)
+# Identifying and Naming Pathways Clusters
 
+After preparing your data, PAVER can generate a set of pathway clusters and identify the most representative pathway (theme) for each cluster. The following code chunk demonstrates how to generate pathway clusters using the example data provided in the PAVER package. To control the minimum number of pathways in a cluster, we pass the `minClusterSize` argument to (dynamicTreeCut)[https://cran.r-project.org/package=dynamicTreeCut].
+```{r}
 PAVER_result = generate_themes(PAVER_result, minClusterSize = 40)
 ```
 
-```{r}
-PAVER_combined_plot = PAVER_combined_plot(PAVER_result)
+# Visualization   
 
-PAVER_combined_plot
+PAVER offers different visualizations for exploring and interpreting pathway clusters, described below.
+
+## Theme Plot
+
+The theme plot is a scatter plot showing all pathways in the dataset, colored by theme. The theme plot is useful for identifying pathways that are similar to each other, and for identifying pathways that are outliers. The theme plot can be generated using the `PAVER_theme_plot` function.
+
+```{r}
+PAVER_theme_plot(PAVER_result)
+```
+
+## Interpretation Plot
+
+The interpretation plot is a scatter plot showing all clusters in the dataset, colored by theme. The interpretation plot is useful for identifying clusters that are similar to each other, and for identifying clusters that are outliers. The interpretation plot can be generated using the `PAVER_interpretation_plot` function.
+
+```{r}
+PAVER_interpretation_plot(PAVER_result)
+```
+
+## Regulation Plot
+
+The regulation plot is similar to the theme plot, except each pathway is colored by whether it is upregulated or downregulated. The regulation plot is useful for qualitatively identifying differences in pathway regulation across different pathway analyses. The regulation plot can be generated using the `PAVER_regulation_plot` function.
+
+
+```{r}
+PAVER_regulation_plot(PAVER_result)
+```
+
+## Heatmap Plot
+
+The heatmap plot shows the enrichment scores for each pathway in each cluster. The heatmap plot is useful for quantitatively identifying identifying differences in pathway regulation across different pathway analyses. The heatmap plot can be generated using the `PAVER_heatmap_plot` function.
+
+```{r}
+PAVER_hunter_plot(PAVER_result)
+```
+
+## Combined Plot
+
+The combined plot simply combines all four plots for ease of use and quick inspection of output. The combined plot can be generated using the `PAVER_combined_plot` function.
+
+```{r}
+PAVER_combined_plot(PAVER_result)
+```
+
+# Export Results
+
+PAVER offers a function for exporting the clustering results of a PAVER analysis.
+
+```{r}
+clustered_input <- PAVER_export(PAVER_result)
 ```

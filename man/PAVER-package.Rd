@@ -6,7 +6,7 @@
 \alias{PAVER-package}
 \title{PAVER: PAVER: Pathway Analysis Visualization with Embedding Representations}
 \description{
-Summary visualization using embedding representations to reveal underlying themes within sets of Gene Ontology terms.
+Summary visualization using embedding representations to reveal underlying themes within sets of pathway terms.
 }
 \author{
 \strong{Maintainer}: William G Ryan V \email{billyryan543@gmail.com} (\href{https://orcid.org/0000-0003-4868-4002}{ORCID})
