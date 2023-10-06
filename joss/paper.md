@@ -40,7 +40,7 @@ affiliations:
 
 # Summary
 
-Omics studies are commonly used to predict changes in biological pathways underlying phenotypes. However, the results of omics experiments can be long lists of pathways that are difficult to interpret. PAVER is an R package that automatically curates long lists of pathways into groups, identifies which pathway is most representative of each group, and provides publication-ready intuitive visualizations. PAVER makes it easy to integrate multiple pathway analyses, identify relevant biological insights and can work with any pathway database.
+Omics studies look at large amounts of biological data to understand changes that cause different traits or conditions in living things. However, analyzing omics data often results in long, hard-to-understand lists of pathways. PAVER is an R package that automatically curates similar pathways into groups, identifies the most representative pathway of each group, and provides publication-ready intuitive visualizations. PAVER makes it easy to integrate multiple pathway analyses, discover relevant biological insights and can work with any pathway database.
 
 # Statement of Need
 
