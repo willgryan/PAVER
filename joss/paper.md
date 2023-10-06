@@ -38,15 +38,15 @@ affiliations:
 
 # Summary
 
-Omics experiments are commonly used to predict changes in pathways underlying phenotypes. However, the results of these experiments are often long lists of pathways that are difficult to interpret. PAVER is an R package that automatically curates long lists of pathways into groups, identifies which pathway is most representative of each group, and provides publication-ready intuitive visualizations. PAVER makes it easy to integrate multiple pathway analyses, identify relevant biological insights and can work with any pathway database.
+Omics studies are commonly used to predict changes in biological pathways underlying phenotypes. However, the results of omics experiments can be long lists of pathways that are difficult to interpret. PAVER is an R package that automatically curates long lists of pathways into groups, identifies which pathway is most representative of each group, and provides publication-ready intuitive visualizations. PAVER makes it easy to integrate multiple pathway analyses, identify relevant biological insights and can work with any pathway database.
 
 # Statement of Need
 
-Multiomics is used extensively in biological research today. However, the development of omics technologies has vastly outpaced the expertise of researchers in its analysis, and the resulting “data deluge” now overwhelms the capacity of human cognition [@RN16; @RN20; @RN19]. Analysis of omics data is therefore the major bottleneck in most research projects today and its use in precision medicine remains limited accordingly [@RN26; @RN63]. Pathway analysis has since become ubiquitous to help interpret omics data and elucidate mechanisms of biological phenomena under study [@RN6]. Despite the last decade bringing a host of different computational tools to perform pathway analysis, they each generally result in lists of results too long to manually inspect and extract relevant targets for downstream wet lab validation without introducing biases [@RN5; @RN81]. Interpretation of results is accordingly the greatest expense in any omics project [@RN21]. With the total volume of omics data continuing to grow, novel ways of data management are needed [@RN22]. FAIR (Findable, Accessible, Interoperable, Reusable) scientific data principles necessitate automated interpretation of omics results [@RN25].
+Omics is used extensively in biological research today. However, the development of omics technologies has vastly outpaced the expertise of researchers in its analysis, and the resulting “data deluge” now overwhelms the capacity of human cognition [@RN16; @RN20; @RN19]. Analysis of omics data is therefore the major bottleneck in most research projects today and its use in precision medicine remains limited accordingly [@RN26; @RN63]. Pathway analysis has since become ubiquitous to help interpret omics data and elucidate mechanisms of biological phenomena under study [@RN6]. Despite the last decade bringing a host of different computational tools to perform pathway analysis, they each generally result in lists of results too long to manually inspect and extract relevant targets for downstream wet lab validation without introducing biases [@RN5; @RN81]. Interpretation of results is accordingly the greatest expense in any omics project [@RN21]. With the total volume of omics data continuing to grow, novel ways of data management are needed [@RN22]. FAIR (Findable, Accessible, Interoperable, Reusable) scientific data principles necessitate automated interpretation of omics results [@RN25].
 
 # Overview
 
-PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be clustered and visualized (\autoref{fig:overview}). To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster to capture it's overall meaning into a single numerical representation [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group.
+PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be hierarchically clustered and visualized (\autoref{fig:overview}). To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster to capture it's overall meaning into a single numerical representation [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group.
 
 ![PAVER uses numerical representations of pathways to find functionally related clusters.\label{fig:overview}](figures/overview.png)
 
@@ -59,5 +59,9 @@ The PAVER R package is licensed under the GNU General Public License v3.0. It ca
 # Acknowledgements
 
 This work was supported by NIH T32-G-RISE grant number 1T32GM144873-01.
+
+# Disclosure
+
+The authors declare no potential conflicts of interest with respect to the research, authorship, and/or publication of this article.
 
 # References

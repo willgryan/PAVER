@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 # Overview
 
-PAVER is an R package for the visualization and interpretation of pathway analysis results. PAVER uses a combination of hierarchical clustering, dimensionality reduction, and visualization techniques to identify and characterize similar pathways in a given dataset. PAVER is designed to be used with any GSEA tool that produces a ranked list of pathways, like [GSEA](https://www.gsea-msigdb.org/gsea/index.jsp) or [Enrichr](https://maayanlab.cloud/Enrichr/).
+PAVER is an R package for interpreting and visualizing pathway analysis results. PAVER uses embedding representations and hierarchical clustering to identify and characterize similar pathways in a given dataset. PAVER is designed to be used with any GSEA tool that produces a ranked list of pathways, like [GSEA](https://www.gsea-msigdb.org/gsea/index.jsp) or [Enrichr](https://maayanlab.cloud/Enrichr/).
 
 # Data Preparation
 

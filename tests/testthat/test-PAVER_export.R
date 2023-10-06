@@ -5,19 +5,32 @@ library(tibble)
 
 test_that("PAVER_export works correctly", {
 
-  #Use vignette example data
-  input = gsea_example
+  #Mock input data
+  mock_input <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    GroupA = rnorm(250),
+    GroupB = rnorm(250),
+    GroupC = rnorm(250)
+  )
 
-  embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
+  # Mock embeddings data
+  mock_embeddings <- matrix(rnorm(250 * 10), 250, 10)
+  rownames(mock_embeddings) <- paste0("GO:", sprintf("%07d", 1:250))
 
-  term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
+  # Mock term2name data
+  mock_term2name <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    TermName = paste0("Term ", 1:250)
+  )
 
-  PAVER_result = prepare_data(input, embeddings, term2name)
+  # Generate the mock PAVER_result using the prepare_data function
+  mock_PAVER_result <- prepare_data(mock_input, mock_embeddings, mock_term2name)
 
-  PAVER_result <- generate_themes(PAVER_result, minClusterSize = 40)
+  # Run the generate_themes function with the mock PAVER_result
+  result <- generate_themes(mock_PAVER_result)
 
   # Test PAVER_export function
-  export_result <- PAVER_export(PAVER_result)
+  export_result <- PAVER_export(result)
 
   # Verify the structure and content of the output
   expect_s3_class(export_result, "tbl_df")

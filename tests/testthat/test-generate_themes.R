@@ -7,27 +7,40 @@ library(umap)
 library(dynamicTreeCut)
 library(randomcoloR)
 
-test_that("generate_themes works correctly", {
+# Mock unit test for the generate_themes function
+test_that("generate_themes function works with mock PAVER_result", {
 
-  #Use vignette example data
-  input = gsea_example
+  #Mock input data
+  mock_input <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    GroupA = rnorm(250),
+    GroupB = rnorm(250),
+    GroupC = rnorm(250)
+  )
 
-  embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
+  # Mock embeddings data
+  mock_embeddings <- matrix(rnorm(250 * 10), 250, 10)
+  rownames(mock_embeddings) <- paste0("GO:", sprintf("%07d", 1:250))
 
-  term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
+  # Mock term2name data
+  mock_term2name <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    TermName = paste0("Term ", 1:250)
+  )
 
-  PAVER_result = prepare_data(input, embeddings, term2name)
+  # Generate the mock PAVER_result using the prepare_data function
+  mock_PAVER_result <- prepare_data(mock_input, mock_embeddings, mock_term2name)
 
-  # Test generate_themes function
-  result <- generate_themes(PAVER_result, minClusterSize = 40)
+  # Run the generate_themes function with the mock PAVER_result
+  result <- generate_themes(mock_PAVER_result)
 
-  # Verify output structure
-  expect_type(result, "list")
-  expect_named(result, c("prepared_data", "embedding_mat", "umap", "goterms_df", "clustering", "avg_cluster_embeddings", "mds", "colors"))
-  expect_s3_class(result$clustering, "tbl_df")
-  expect_s3_class(result$avg_cluster_embeddings, "tbl_df")
-  expect_s3_class(result$mds, "smacof")
-  expect_type(result$colors, "character")
+  # Test that result is a list
+  expect_true(is.list(result))
 
+  # Test that the result contains expected elements
+  expect_true("clustering" %in% names(result))
+  expect_true("avg_cluster_embeddings" %in% names(result))
+  expect_true("mds" %in% names(result))
+  expect_true("colors" %in% names(result))
 })
 

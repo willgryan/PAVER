@@ -4,19 +4,32 @@ library(ggpubr)
 
 test_that("PAVER_theme_plot works correctly", {
 
-  #Use vignette example data
-  input = gsea_example
+  #Mock input data
+  mock_input <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    GroupA = rnorm(250),
+    GroupB = rnorm(250),
+    GroupC = rnorm(250)
+  )
 
-  embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
+  # Mock embeddings data
+  mock_embeddings <- matrix(rnorm(250 * 10), 250, 10)
+  rownames(mock_embeddings) <- paste0("GO:", sprintf("%07d", 1:250))
 
-  term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
+  # Mock term2name data
+  mock_term2name <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    TermName = paste0("Term ", 1:250)
+  )
 
-  PAVER_result = prepare_data(input, embeddings, term2name)
+  # Generate the mock PAVER_result using the prepare_data function
+  mock_PAVER_result <- prepare_data(mock_input, mock_embeddings, mock_term2name)
 
-  PAVER_result <- generate_themes(PAVER_result, minClusterSize = 40)
+  # Run the generate_themes function with the mock PAVER_result
+  result <- generate_themes(mock_PAVER_result)
 
   # Run the function and catch the result
-  p <- PAVER_theme_plot(PAVER_result)
+  p <- PAVER_theme_plot(result)
 
   # Verify the function runs and produces a ggplot object
   expect_s3_class(p, "gg")

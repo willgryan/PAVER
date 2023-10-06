@@ -14,9 +14,9 @@
 PAVER_theme_plot <- function(PAVER_result) {
 
   plot = PAVER_result$umap$layout %>%
-    tibble::as_tibble(rownames = NA) %>%
+    tibble::as_tibble(rownames = NA, .name_repair = "universal") %>%
     tibble::rownames_to_column("UniqueID") %>%
-    dplyr::rename(UMAP1 = "V1", UMAP2 = "V2") %>%
+    dplyr::rename_with(.cols = 2:3, ~ c("UMAP1", "UMAP2")) %>%
     dplyr::inner_join(PAVER_result$clustering %>%
                         dplyr::select(.data$UniqueID, .data$Group, .data$Cluster), by = "UniqueID") %>%
     ggplot2::ggplot(ggplot2::aes(x = .data$UMAP1,

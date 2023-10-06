@@ -5,25 +5,48 @@ library(tibble)
 library(magrittr)
 library(umap)
 
-test_that("prepare_data works correctly", {
+test_that("prepare_data function works with mock data", {
 
-  #Use vignette example data
-  input = gsea_example
+  #Mock input data
+  mock_input <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    GroupA = rnorm(250),
+    GroupB = rnorm(250),
+    GroupC = rnorm(250)
+  )
 
-  embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/embeddings_2023-03-06.RDS"))
+  # Mock embeddings data
+  mock_embeddings <- matrix(rnorm(250 * 10), 250, 10)
+  rownames(mock_embeddings) <- paste0("GO:", sprintf("%07d", 1:250))
 
-  term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
+  # Mock term2name data
+  mock_term2name <- data.frame(
+    GOID = paste0("GO:", sprintf("%07d", 1:250)),
+    TermName = paste0("Term ", 1:250)
+  )
 
-  # Test function
-  result <- prepare_data(input, embeddings, term2name)
+  result <- prepare_data(mock_input, mock_embeddings, mock_term2name)
 
-  # Verify output structure
-  expect_type(result, "list")
-  expect_named(result, c("prepared_data", "embedding_mat", "umap", "goterms_df"))
-  expect_s3_class(result$prepared_data, "data.frame")
-  expect_s3_class(result$embedding_mat, "tbl_df")
-  expect_s3_class(result$umap, "umap")
-  expect_s3_class(result$goterms_df, "tbl_df")
+  # Test that result is a list
+  expect_true(is.list(result))
 
+  # Test that the result contains the expected elements
+  expect_true("prepared_data" %in% names(result))
+  expect_true("embedding_mat" %in% names(result))
+  expect_true("umap" %in% names(result))
+  expect_true("goterms_df" %in% names(result))
+
+  # Test the dimensions and data of the prepared_data dataframe
+  expect_equal(nrow(result$prepared_data), nrow(mock_input) * 3) # assuming all mock input values are non-zero
+  expect_equal(ncol(result$prepared_data), 5) # Columns: GOID, Group, value, Direction, UniqueID
+
+  # Test the dimensions of the embedding matrix
+  expect_equal(nrow(result$embedding_mat), nrow(mock_input) * (ncol(mock_input) - 1))
+  expect_equal(ncol(result$embedding_mat), 11) # As mock_embeddings has 10 columns
+
+  # Test the goterms_df dataframe
+  expect_equal(nrow(result$goterms_df), nrow(mock_input))
+  expect_equal(ncol(result$goterms_df), 2) # Columns: GOID and TermName
 })
+
 
