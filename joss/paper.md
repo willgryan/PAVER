@@ -7,7 +7,8 @@ tags:
 date: "3 September 1997"
 output: pdf_document
 authors:
-- name: "William G Ryan V"
+- name: "William G Ryan"
+  suffix: "V"
   orcid: "0000-0003-4868-4002"
   corresponding: yes
   affiliation: 1
