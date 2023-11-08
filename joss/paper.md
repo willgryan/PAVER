@@ -21,21 +21,23 @@ authors:
   affiliation: 1
 - name: "Xiaolu Zhang"
   orcid: "0000-0001-5595-7270"
-  affiliation: 2
+  affiliation: 3
 - name: "Rammohan Shukla"
   orcid: "0000-0001-5776-2506"
-  affiliation: 3
+  affiliation: 4
 - name: "Robert McCullumsmith"
   orcid: "0000-0001-6921-7150"
-  affiliation: 1
+  affiliation: "1, 2"
 bibliography: paper.bib
 affiliations:
 - name: Department of Neurosciences, College of Medicine and Life Sciences, University of Toledo, Toledo, OH, USA
   index: 1
-- name: Department of Microbiology and Immunology, Louisiana State University Health Sciences Center, Shreveport, LA, USA
+- name: Neurosciences Institute, ProMedica, Toledo, OH, USA 
   index: 2
-- name: Department of Zoology & Physiology, College of Agriculture, Life Sciences and Natural Resources, University of Wyoming, Laramie, WY, USA
+- name: Department of Microbiology and Immunology, Louisiana State University Health Sciences Center, Shreveport, LA, USA
   index: 3
+- name: Department of Zoology & Physiology, College of Agriculture, Life Sciences and Natural Resources, University of Wyoming, Laramie, WY, USA
+  index: 4
 ---
 
 # Summary
@@ -48,11 +50,11 @@ Omics is used extensively in biological research today. However, the development
 
 # Overview
 
-PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be hierarchically clustered and visualized (\autoref{fig:overview}). To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster to capture it's overall meaning into a single numerical representation [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group.
+PAVER uses vector embeddings to help interpret pathway analyses. Embeddings encode the meaning of pathways into numerical representations which can then be hierarchically clustered and visualized (\autoref{fig:overview}). To identify which pathway is most representative of a cluster, PAVER first takes the average embedding of all pathways in a cluster to capture it's overall meaning into a single numerical representation [@RN49]. It then finds which pathway is most similar to the average embedding and labels the cluster with that pathway. This allows PAVER to automatically curate long lists of pathways into groups and identify which pathway is most representative of each group. PAVER assumes the pathway analysis was properly performed [@9tips].
 
 ![PAVER uses numerical representations of pathways to find functionally related clusters.\label{fig:overview}](figures/overview.png)
 
-PAVER was designed to be easy to use by researchers with minimal coding experience. PAVER has already been used in a number of scientific publications to aid in the interpretation of pathway analyses [@william_ryan_2023_8156248; @RN78]. We have pre-computed vector representations for Gene Ontology [@RN68] using the recent anc2vec model [@RN13], available here: https://github.com/willgryan/PAVER_embeddings. However, embeddings for any pathway database can be used with PAVER.
+PAVER was designed to be easy to use by researchers with minimal coding experience. PAVER has already been used in a number of scientific publications to aid in the interpretation of pathway analyses [@william_ryan_2023_8156248; @RN78]. We have pre-computed vector representations for Gene Ontology [@RN68] using the recent anc2vec model [@RN13], available here: https://github.com/willgryan/PAVER_embeddings. However, embeddings for any pathway database or ontology can be used with PAVER.
 
 # Licensing, Availability and Usage
 
@@ -60,7 +62,7 @@ The PAVER R package is licensed under the GNU General Public License v3.0. It ca
 
 # Acknowledgements
 
-This work was supported by NIH T32-G-RISE grant number 1T32GM144873-01.
+This work was supported by NIH NIGMS T32-G-RISE grant number 1T32GM144873-01, NIMH grant number R01MH107487, NIMH grant number R01MH121102, and NIH grant number R01AG057598.
 
 # Disclosure
 
