@@ -24,11 +24,11 @@ generate_themes <-
     clust = stats::hclust(D_sim, method = hclust_method)
 
     #Dynamic tree cut to generate clusters
-    clustering = dynamicTreeCut::cutreeDynamic(clust, distM = as.matrix(D_sim), ...) %>%
+    clustering = dynamicTreeCut::cutreeDynamic(clust, distM = as.matrix(D_sim), verbose = 0, ...) %>%
       purrr::set_names(clust$labels) %>%
       tibble::enframe(name = "UniqueID", value = "Cluster") %>%
       dplyr::mutate(Cluster = as.factor(.data$Cluster)) %>%
-      dplyr::inner_join(PAVER_result$embedding_mat)
+      dplyr::inner_join(PAVER_result$embedding_mat, by = "UniqueID")
 
     #Average the embeddings within each cluster
     avg_cluster_embeddings = clustering %>%

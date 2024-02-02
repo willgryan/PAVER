@@ -35,14 +35,23 @@ embeddings = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main
 term2name = readRDS(url("https://github.com/willgryan/PAVER_embeddings/raw/main/2023-03-06/term2name_2023-03-06.RDS"))
 
 PAVER_result = prepare_data(input, embeddings, term2name)
-
 ```
 
 # Identifying and Naming Pathways Clusters
 
-After preparing your data, PAVER can generate a set of pathway clusters and identify the most representative pathway (theme) for each cluster. The following code chunk demonstrates how to generate pathway clusters using the example data provided in the PAVER package. To control the minimum number of pathways in a cluster, we pass the `minClusterSize` argument to (dynamicTreeCut)[https://cran.r-project.org/package=dynamicTreeCut].
+After preparing your data, PAVER can generate a set of pathway clusters and identify the most representative pathway (theme) for each cluster. The following code chunk demonstrates how to generate pathway clusters using the example data provided in the PAVER package. To constrain the pathway clustering, we pass the following arguments to (dynamicTreeCut)[https://cran.r-project.org/package=dynamicTreeCut]. Increasing `minClusterSize` will result in fewer clusters, while increasing `maxCoreScatter` will result in more clusters. 
+<!-- https://stackoverflow.com/questions/19734381/cutting-dendrogram-into-n-trees-with-minimum-cluster-size-in-r -->
 ```{r}
-PAVER_result = generate_themes(PAVER_result, minClusterSize = 40)
+minClusterSize = 5
+maxCoreScatter = 0.33
+minGap = (1 - maxCoreScatter) * 3 / 4
+PAVER_result = generate_themes(
+  PAVER_result,
+  maxCoreScatter = maxCoreScatter,
+  minGap = minGap,
+  minClusterSize = minClusterSize
+)
+# 
 ```
 
 # Visualization   
