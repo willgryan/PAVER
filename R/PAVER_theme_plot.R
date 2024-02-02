@@ -14,7 +14,7 @@
 PAVER_theme_plot <- function(PAVER_result) {
 
   plot = PAVER_result$umap$layout %>%
-    tibble::as_tibble(rownames = NA, .name_repair = "universal") %>%
+    tibble::as_tibble(rownames = NA, .name_repair = "universal_quiet") %>%
     tibble::rownames_to_column("UniqueID") %>%
     dplyr::rename_with(.cols = 2:3, ~ c("UMAP1", "UMAP2")) %>%
     dplyr::inner_join(PAVER_result$clustering %>%

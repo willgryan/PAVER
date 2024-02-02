@@ -14,9 +14,9 @@
 PAVER_regulation_plot <- function(PAVER_result) {
 
   plot_data = PAVER_result$umap$layout %>%
-    tibble::as_tibble(rownames = NA) %>%
+    tibble::as_tibble(rownames = NA, .name_repair = "universal_quiet") %>%
     tibble::rownames_to_column("UniqueID") %>%
-    dplyr::rename(UMAP1 = "V1", UMAP2 = "V2") %>%
+    dplyr::rename(UMAP1 = 2, UMAP2 = 3) %>%
     dplyr::inner_join(PAVER_result$clustering %>%
                         dplyr::select(.data$UniqueID, .data$Group), by = "UniqueID") %>%
     dplyr::inner_join(PAVER_result$prepared_data %>%

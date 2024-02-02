@@ -51,7 +51,6 @@ PAVER_result = generate_themes(
   minGap = minGap,
   minClusterSize = minClusterSize
 )
-# 
 ```
 
 # Visualization   

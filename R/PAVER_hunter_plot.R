@@ -15,13 +15,14 @@
 PAVER_hunter_plot <- function(PAVER_result, unit=NULL) {
 
   data = PAVER_result$prepared_data %>%
+    tidyr::pivot_wider(names_from = "Group", values_from = c("value"), id_cols = "GOID") %>%
     dplyr::inner_join(PAVER_result$clustering %>%
-                        dplyr::select(.data$UniqueID, .data$Cluster), by = "UniqueID") %>%
+                        dplyr::select(.data$GOID, .data$Cluster), by = "GOID") %>%
     dplyr::mutate(Cluster = forcats::fct_drop(.data$Cluster)) %>%
-    tidyr::pivot_wider(names_from = "Group", values_from = "value") %>%
     dplyr::mutate(dplyr::across(
       .cols = dplyr::where(is.numeric),
-      .fns = ~ tidyr::replace_na(.x, 0)))
+      .fns = ~ tidyr::replace_na(.x, 0))) %>%
+    dplyr::distinct(.data$GOID, .keep_all = TRUE)
 
   mat = data %>%
     dplyr::select(dplyr::where(is.numeric)) %>%
@@ -30,14 +31,14 @@ PAVER_hunter_plot <- function(PAVER_result, unit=NULL) {
   min = min(mat, na.rm=T)
   max = max(mat, na.rm=T)
 
-  if(nlevels(data$Direction) != 1) { #If the data is signed, 0 is the middle
+  if(nlevels(PAVER_result$prepared_data$Direction) != 1) { #If the data is signed, 0 is the middle
     col_fun = circlize::colorRamp2(c(min, 0, max), c("blue", "white", "red"))
     at = c(min, 0, max)
     labels = c(round(min, 2), 0, round(max, 2))
   } else {
     at = c(min, max)
     labels = c(round(min, 2), round(max, 2))
-    if(levels(data$Direction) == "+") {
+    if(levels(PAVER_result$prepared_data$Direction) == "+") {
       col_fun = circlize::colorRamp2(c(min, max), c("white", "red"))
     } else {
       col_fun = circlize::colorRamp2(c(min, max), c("white", "blue"))
@@ -68,7 +69,7 @@ PAVER_hunter_plot <- function(PAVER_result, unit=NULL) {
                row_gap = grid::unit(2, "mm"),
                show_row_dend = T,
                cluster_rows = if (ncol(mat) >= 2) dend else T,
-               cluster_columns = ncol(mat) >= 2,
+               cluster_columns = ncol(mat) >= 3,
                split = if (ncol(mat) >= 2) nlevels(data$Cluster) else data$Cluster,
                show_heatmap_legend = FALSE)
 
