@@ -92,7 +92,7 @@ generate_themes <-
     mds = avg_cluster_embeddings %>%
       tibble::column_to_rownames("Cluster") %>%
       as.matrix() %>%
-      cosine_dissimilarity(root = T) %>%
+      cosine_dissimilarity(root = TRUE) %>%
       smacof::mds(type = "ordinal")
 
     #Generate distinct categorical colors for plotting

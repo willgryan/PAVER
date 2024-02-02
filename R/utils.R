@@ -16,7 +16,7 @@ cosine_dissimilarity <- function(mat, root = FALSE) {
   sim = sim %*% t(sim)
 
   if(root == T) {
-    D_sim = stats::as.dist(sqrt(1 - sim))
+    D_sim = stats::as.dist(suppressWarnings(sqrt(1 - sim)))
   } else {
     D_sim = stats::as.dist(1 - sim)
   }
