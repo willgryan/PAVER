@@ -66,6 +66,6 @@ This work was supported by NIH NIGMS T32-G-RISE grant number 1T32GM144873-01, NI
 
 # Disclosure
 
-The authors declare no potential conflicts of interest with respect to the research, authorship, and/or publication of this article.
+The authors declare no potential conflicts of interest related to the research in this manuscript, including financial, personal, or professional relationships that may affect their objectivity.
 
 # References
