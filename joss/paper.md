@@ -58,7 +58,7 @@ PAVER was designed to be easy to use by researchers with minimal programming exp
 
 # Licensing, Availability and Usage
 
-The PAVER R package is licensed under the GNU General Public License v3.0. It can be installed using `remotes::install_github("willgryan/PAVER")`. All code, including an instructional vignette with example data, is open-source and hosted on GitHub. Bugs and feature requests can be made using the issue tracker at [https://github.com/willgryan/PAVER/issues/](https://github.com/willgryan/PAVER/issues/).
+The PAVER R package is licensed under the GNU General Public License v3.0. All code, including installation instructions and an instructional vignette with example data, is open-source and hosted on [GitHub](https://github.com/willgryan/PAVER/). Bugs and feature requests can be made using the issue tracker at [https://github.com/willgryan/PAVER/issues/](https://github.com/willgryan/PAVER/issues/).
 
 # Acknowledgements
 
