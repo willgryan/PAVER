@@ -43,7 +43,7 @@ affiliations:
   index: 4
 - name: Division of Biomedical Informatics, Cincinnati Children’s Hospital Medical Center, Cincinnati, OH, USA
   index: 5
-- name: Department of Informatics, Nicolaus Copernicus University, Torun, Poland
+- name: Department of Informatics, Nicolaus Copernicus University, Toruń, Poland
   index: 6
 - name: Department of Zoology & Physiology, College of Agriculture, Life Sciences and Natural Resources, University of Wyoming, Laramie, WY, USA
   index: 7
