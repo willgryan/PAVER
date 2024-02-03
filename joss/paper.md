@@ -21,33 +21,33 @@ authors:
   affiliation: 1
 - name: "Xiaolu Zhang"
   orcid: "0000-0001-5595-7270"
-  affiliation: 3
+  affiliation: 2
 - name: "Jarek Meller"
   orcid: "0000-0002-1162-8253"
-  affiliation: "5, 6, 7, 8"
+  affiliation: "3, 4, 5, 6"
 - name: "Rammohan Shukla"
   orcid: "0000-0001-5776-2506"
-  affiliation: 4
+  affiliation: 7
 - name: "Robert McCullumsmith"
   orcid: "0000-0001-6921-7150"
-  affiliation: "1, 2"
+  affiliation: "1, 8"
 bibliography: paper.bib
 affiliations:
 - name: Department of Neurosciences, College of Medicine and Life Sciences, University of Toledo, Toledo, OH, USA
   index: 1
-- name: Neurosciences Institute, ProMedica, Toledo, OH, USA 
-  index: 2
 - name: Department of Microbiology and Immunology, Louisiana State University Health Sciences Center, Shreveport, LA, USA
-  index: 3
-- name: Department of Zoology & Physiology, College of Agriculture, Life Sciences and Natural Resources, University of Wyoming, Laramie, WY, USA
-  index: 4
+  index: 2
 - name: Department of Environmental and Public Health Sciences, University of Cincinnati, Cincinnati, OH, USA
-  index: 5
+  index: 3
 - name: Department of Computer Science, University of Cincinnati, Cincinnati, OH, USA
-  index: 6
+  index: 4
 - name: Division of Biomedical Informatics, Cincinnati Children’s Hospital Medical Center, Cincinnati, OH, USA
-  index: 7
+  index: 5
 - name: Department of Informatics, Nicolaus Copernicus University, Torun, Poland
+  index: 6
+- name: Department of Zoology & Physiology, College of Agriculture, Life Sciences and Natural Resources, University of Wyoming, Laramie, WY, USA
+  index: 7
+- name: Neurosciences Institute, ProMedica, Toledo, OH, USA 
   index: 8
 ---
 
