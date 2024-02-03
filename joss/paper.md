@@ -22,6 +22,9 @@ authors:
 - name: "Xiaolu Zhang"
   orcid: "0000-0001-5595-7270"
   affiliation: 3
+- name: "Jarek Meller"
+  orcid: "0000-0002-1162-8253"
+  affiliation: "5, 6, 7, 8"
 - name: "Rammohan Shukla"
   orcid: "0000-0001-5776-2506"
   affiliation: 4
@@ -38,6 +41,14 @@ affiliations:
   index: 3
 - name: Department of Zoology & Physiology, College of Agriculture, Life Sciences and Natural Resources, University of Wyoming, Laramie, WY, USA
   index: 4
+- name: Department of Environmental and Public Health Sciences, University of Cincinnati, Cincinnati, OH, USA
+  index: 5
+- name: Department of Computer Science, University of Cincinnati, Cincinnati, OH, USA
+  index: 6
+- name: Division of Biomedical Informatics, Cincinnati Children’s Hospital Medical Center, Cincinnati, OH, USA
+  index: 7
+- name: Department of Informatics, Nicolaus Copernicus University, Torun, Poland
+  index: 8
 ---
 
 # Summary
