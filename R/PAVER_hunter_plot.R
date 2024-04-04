@@ -51,8 +51,8 @@ PAVER_hunter_plot <- function(PAVER_result, unit=NULL) {
                labels = labels,
                direction = "horizontal",
                title_position = "lefttop",
-               title_gp = grid::gpar(fontsize = 8),
-               labels_gp = grid::gpar(fontsize = 8))
+               title_gp = grid::gpar(fontsize = 9,fontface="bold"),
+               labels_gp = grid::gpar(fontsize = 9,fontface="bold"))
 
   if(ncol(mat) >= 2) {
     dend = ComplexHeatmap::cluster_within_group(mat %>% t(), data$Cluster)
@@ -60,20 +60,26 @@ PAVER_hunter_plot <- function(PAVER_result, unit=NULL) {
 
   ht = ComplexHeatmap::Heatmap(mat,
                                col = col_fun,
-               row_title_gp = grid::gpar(fontsize = 8),
-               column_names_gp = grid::gpar(fontsize = 8),
+               row_title_gp = grid::gpar(fontsize = 9,fontface="bold"),
+               column_names_gp = grid::gpar(fontsize = 9,fontface="bold"),
                column_names_rot = 0,
                column_names_centered = TRUE,
                row_title_rot = 0,
                row_title_side = "right",
-               row_gap = grid::unit(2, "mm"),
+               row_gap = grid::unit(1, "mm"),
                show_row_dend = T,
                cluster_rows = if (ncol(mat) >= 2) dend else T,
                cluster_columns = ncol(mat) >= 3,
                split = if (ncol(mat) >= 2) nlevels(data$Cluster) else data$Cluster,
-               show_heatmap_legend = FALSE)
+               show_heatmap_legend = FALSE,
+               border = TRUE)
 
-  ComplexHeatmap::draw(ht,
+  ht_draw = ComplexHeatmap::draw(ht,
        heatmap_legend_list = lgd,
        heatmap_legend_side="bottom")
+
+  plot = grid::grid.grabExpr(ComplexHeatmap::draw(ht_draw)) %>%
+    ggplotify::as.ggplot()
+
+  plot
 }

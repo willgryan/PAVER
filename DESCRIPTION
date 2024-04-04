@@ -15,6 +15,7 @@ Imports:
     dynamicTreeCut,
     forcats,
     ggplot2,
+    ggplotify,
     ggpubr,
     ggrepel,
     grid,
