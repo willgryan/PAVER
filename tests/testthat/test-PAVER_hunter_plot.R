@@ -32,5 +32,5 @@ test_that("PAVER_hunter_plot works correctly", {
   p <- PAVER_hunter_plot(result)
 
   # Verify the function runs and produces a ggplot object
-  expect_s4_class(p, "HeatmapList")
+  expect_s3_class(p, "gg")
 })
