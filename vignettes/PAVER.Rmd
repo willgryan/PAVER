@@ -42,7 +42,7 @@ PAVER_result = prepare_data(input, embeddings, term2name)
 After preparing your data, PAVER can generate a set of pathway clusters and identify the most representative pathway (theme) for each cluster. The following code chunk demonstrates how to generate pathway clusters using the example data provided in the PAVER package. To constrain the pathway clustering, we pass the following arguments to (dynamicTreeCut)[https://cran.r-project.org/package=dynamicTreeCut]. Increasing `minClusterSize` will result in fewer clusters, while increasing `maxCoreScatter` will result in more clusters. 
 <!-- https://stackoverflow.com/questions/19734381/cutting-dendrogram-into-n-trees-with-minimum-cluster-size-in-r -->
 ```{r}
-minClusterSize = 5
+minClusterSize = 3
 maxCoreScatter = 0.33
 minGap = (1 - maxCoreScatter) * 3 / 4
 PAVER_result = generate_themes(

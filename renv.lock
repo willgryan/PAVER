@@ -1010,6 +1010,26 @@
       ],
       "Hash": "1547863db3b472cf7181973acf649f1a"
     },
+    "ggprism": {
+      "Package": "ggprism",
+      "Version": "1.0.5",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "digest",
+        "ggplot2",
+        "glue",
+        "grid",
+        "gtable",
+        "rlang",
+        "scales",
+        "stats",
+        "tibble",
+        "utils"
+      ],
+      "Hash": "6b1020c155c1048c18f39df11eb464e8"
+    },
     "ggpubr": {
       "Package": "ggpubr",
       "Version": "0.6.0",

@@ -9,3 +9,5 @@
 paper.md
 paper.bib
 ^joss$
+^doc$
+^Meta$

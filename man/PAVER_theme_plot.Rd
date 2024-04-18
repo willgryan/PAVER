@@ -4,10 +4,12 @@
 \alias{PAVER_theme_plot}
 \title{PAVER_theme_plot}
 \usage{
-PAVER_theme_plot(PAVER_result)
+PAVER_theme_plot(PAVER_result, show_cluster_legend = TRUE)
 }
 \arguments{
 \item{PAVER_result}{a list containing the output of PAVER analysis}
+
+\item{show_cluster_legend}{a logical indicating whether to show the cluster legend.}
 }
 \value{
 A ggplot2 scatterplot of the UMAP layout colored by cluster assignments
