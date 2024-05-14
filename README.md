@@ -24,7 +24,11 @@ remotes::install_github("willgryan/PAVER")
 
 PAVER is designed to work with the output of pathway analysis tools. The
 package includes a vignette with an example dataset that explains it’s
-functionality.
+functionality. The R Shiny application for the PAVER R package is hosted
+at <https://cdrl.shinyapps.io/PAVER/>. For more detailed information on
+PAVER and its functionalities, please refer to the article on the
+Cognitive Disorders Research Laboratory (CDRL) website
+[here](https://cdrl-ut.org/project/projects_and_posters/paver/).
 
 ## Contributing
 
