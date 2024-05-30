@@ -19,6 +19,16 @@ PAVER and its functionalities, please read further below and also refer
 to the article on the Cognitive Disorders Research Laboratory (CDRL)
 website [here](https://cdrl-ut.org/project/projects_and_posters/paver/).
 
+## Downloads
+
+You may download the latest package release for PAVER
+[here](https://github.com/willgryan/PAVER/releases/latest). You may also
+download the latest release of the R Shiny app for the PAVER R package
+[here](https://github.com/willgryan/PAVER_shiny/releases/latest).
+
+Pre-computed pathway embeddings for use with PAVER are available for
+download [here](https://github.com/willgryan/PAVER_embeddings).
+
 ## Installation
 
 You can install the development version of PAVER from
@@ -29,16 +39,6 @@ if (!requireNamespace("remotes", quietly = TRUE))
     install.packages("remotes")
 remotes::install_github("willgryan/PAVER")
 ```
-
-## Download
-
-Alternatively, you may download the latest package release for PAVER
-[here](https://github.com/willgryan/PAVER/releases/latest). You may also
-download the latest release of the R Shiny app for the PAVER R package
-[here](https://github.com/willgryan/PAVER_shiny/releases/latest).
-
-Pre-computed pathway embeddings for use with PAVER are available for
-download here [here](https://github.com/willgryan/PAVER_embeddings).
 
 ## Example
 
@@ -51,10 +51,7 @@ are similar to each other, and for identifying pathways that are
 outliers. The theme plot can be generated using the `PAVER_theme_plot`
 function.
 
-<figure>
-<img src="man/figures/README-theme_plot.jpg" alt="Theme Plot" />
-<figcaption aria-hidden="true">Theme Plot</figcaption>
-</figure>
+![](man/figures/README-theme_plot.jpg)
 
 The heatmap plot shows the enrichment scores for each pathway in each
 cluster. The heatmap plot is useful for quantitatively identifying
@@ -62,10 +59,7 @@ identifying differences in pathway regulation across different pathway
 analyses. The heatmap plot can be generated using the
 `PAVER_hunter_plot` function.
 
-<figure>
-<img src="man/figures/README-hunter_plot.jpg" alt="Heatmap Plot" />
-<figcaption aria-hidden="true">Heatmap Plot</figcaption>
-</figure>
+![](man/figures/README-hunter_plot.jpg)
 
 ## Authors
 
