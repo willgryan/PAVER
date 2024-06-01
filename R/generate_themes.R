@@ -75,7 +75,7 @@ generate_themes <-
       cosine_dissimilarity() %>%
       stats::hclust(method = hclust_method)
 
-    clustering <- clustering %>%
+    clustering = clustering %>%
       dplyr::mutate(Cluster = factor(.data$Cluster, levels = clust2$labels[clust2$order])) %>%
       tidyr::separate(
         .data$UniqueID,
@@ -85,7 +85,7 @@ generate_themes <-
       ) %>%
       dplyr::inner_join(PAVER_result$goterms_df, by = "GOID")
 
-    avg_cluster_embeddings <- avg_cluster_embeddings %>%
+    avg_cluster_embeddings = avg_cluster_embeddings %>%
       dplyr::mutate(Cluster = factor(.data$Cluster, levels = clust2$labels[clust2$order]))
 
     #Compute the MDS of the average embedding matrix
