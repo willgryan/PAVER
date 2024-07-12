@@ -5,17 +5,22 @@
 
 <!-- badges: start -->
 
-[![Software
-DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8156248-blue?logo=github)](https://doi.org/10.5281/zenodo.8156248)
-[![Publication
-DOI](https://img.shields.io/badge/DOI-10.6026%2F973206300200700-blue?logo=pubmed)](https://doi.org/10.6026/973206300200700)
 [![Build
 Status](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml/badge.svg)](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml)
 [![GitHub
 License](https://img.shields.io/github/license/willgryan/paver)](https://github.com/willgryan/PAVER/blob/main/LICENSE.md)
 [![GitHub
 Release](https://img.shields.io/github/v/release/willgryan/paver)](https://github.com/willgryan/PAVER/releases/latest)
+
+[![Software
+DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8156248-blue?logo=github)](https://doi.org/10.5281/zenodo.8156248)
+[![Publication
+DOI](https://img.shields.io/badge/DOI-10.6026%2F973206300200700-blue?logo=pubmed)](https://doi.org/10.6026/973206300200700)
 ![Code Coverage](https://img.shields.io/codecov/c/gh/willgryan/paver)
+[![PDF
+Link](https://img.shields.io/badge/PDF-Download-blue?logo=adobeacrobatreader)](https://www.bioinformation.net/020/973206300200700.pdf)
+[![Webpage
+Link](https://img.shields.io/badge/Link-Download-blue?logo=html5)](https://www.bioinformation.net/020/973206300200700.htm)
 <!-- badges: end -->
 
 PAVER allows for summary interpretation and visualization of pathway
