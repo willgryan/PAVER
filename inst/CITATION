@@ -1,0 +1,61 @@
+bibentry(
+  bibtype = "Article",
+  title = "Interpreting and visualizing pathway analyses using embedding representations with PAVER", # nolint: line_length_linter.
+  author = c(
+    person(
+      c("William", "George"), "Ryan",
+      role = c("aut", "cre"),
+      email = "billyryan543@gmail.com",
+      comment = c(ORCID = "0000-0003-4868-4002")
+    ),
+    person(
+      c("Ali", "Sajid"), "Imami",
+      role = "aut",
+      email = "Ali.Sajid.Imami@gmail.com",
+      comment = c(ORCID = "0000-0003-3684-3539")
+    ),
+    person(
+      "Hunter", "Eby",
+      role = "aut",
+      email = "",
+      comment = c(ORCID = "0000-0002-9029-9768")
+    ),
+    person(
+      "John", "Vergis",
+      role = "aut",
+      email = "",
+      comment = c(ORCID = "0009-0006-0864-3264")
+    ),
+    person(
+      "Xiaolu", "Zhang",
+      role = "aut",
+      email = "",
+      comment = c(ORCID = "XXXX-XXXX-XXXX-XXXX")
+    ),
+    person(
+      "Jarek", "Meller",
+      role = "aut",
+      email = "",
+      comment = c(ORCID = "0000-0002-1162-8253"),
+    ),
+    person(
+      "Rammohan", "Shukla",
+      role = "aut",
+      email = "",
+      comment = c(ORCID = "0000-0001-5776-2506"),
+    ),
+    person(
+      "Robert", "McCullumsmith",
+      role = "aut",
+      email = "Robert.McCullumsmith@utoledo.edu",
+      comment = c(ORCID = "0000-0002-9768-1986")
+    )
+  ),
+  journal = "Bioinformation",
+  year = 2024L,
+  volume = 20L,
+  doi = "10.6026/973206300200700",
+  number = 7L,
+  pages = "700-704",
+  url = "https://www.bioinformation.net/020/973206300200700.pdf"
+)
