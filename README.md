@@ -4,12 +4,18 @@
 # PAVER: Pathway Analysis Visualization with Embedding Representations
 
 <!-- badges: start -->
-[![Software DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8156248-blue?logo=github)](https://doi.org/10.5281/zenodo.8156248)
-[![Publication DOI](https://img.shields.io/badge/DOI-10.6026%2F973206300200700-blue?logo=pubmed)](https://doi.org/10.6026/973206300200700)
-[![Build Status](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml/badge.svg)](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml)
-![GitHub License](https://img.shields.io/github/license/willgryan/paver)
-![GitHub Release](https://img.shields.io/github/v/release/willgryan/paver)
 
+[![Software
+DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8156248-blue?logo=github)](https://doi.org/10.5281/zenodo.8156248)
+[![Publication
+DOI](https://img.shields.io/badge/DOI-10.6026%2F973206300200700-blue?logo=pubmed)](https://doi.org/10.6026/973206300200700)
+[![Build
+Status](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml/badge.svg)](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml)
+[![GitHub
+License](https://img.shields.io/github/license/willgryan/paver)](https://github.com/willgryan/PAVER/blob/main/LICENSE.md)
+[![GitHub
+Release](https://img.shields.io/github/v/release/willgryan/paver)](https://github.com/willgryan/PAVER/releases/latest)
+![Code Coverage](https://img.shields.io/codecov/c/gh/willgryan/paver)
 <!-- badges: end -->
 
 PAVER allows for summary interpretation and visualization of pathway
@@ -27,7 +33,7 @@ website [here](https://cdrl-ut.org/project/projects_and_posters/paver/).
 
 ## Downloads
 
-You may download the latest package release for PAVER
+You may download the latest source release for PAVER
 [here](https://github.com/willgryan/PAVER/releases/latest). You may also
 download the latest release of the R Shiny app for the PAVER R package
 [here](https://github.com/willgryan/PAVER_shiny/releases/latest).
@@ -57,7 +63,8 @@ are similar to each other, and for identifying pathways that are
 outliers. The theme plot can be generated using the `PAVER_theme_plot`
 function.
 
-![](man/figures/README-theme_plot.jpg)
+[![A UMAP plot showing clustering of
+themes](man/figures/README-theme_plot.jpg)](man/figures/README-theme_plot.jpg)
 
 The heatmap plot shows the enrichment scores for each pathway in each
 cluster. The heatmap plot is useful for quantitatively identifying
@@ -65,7 +72,8 @@ identifying differences in pathway regulation across different pathway
 analyses. The heatmap plot can be generated using the
 `PAVER_hunter_plot` function.
 
-![](man/figures/README-hunter_plot.jpg)
+[![A heatmap showing the relative enrichment scores of
+pathways](man/figures/README-hunter_plot.jpg)](man/figures/README-hunter_plot.jpg)
 
 ## Authors
 
