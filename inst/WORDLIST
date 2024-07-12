@@ -2,9 +2,13 @@ Acknowledgements
 Affero
 AliSajid
 aut
+bibentry
+bibtype
 billyryan
 bioc
 bioconductor
+bioinformation
+Bioinformation
 cdrl
 CDRL
 circlize
@@ -47,6 +51,7 @@ knitr
 LazyData
 licensors
 LinkingTo
+linter
 lsuhs
 magrittr
 mccullumsmith
@@ -62,6 +67,7 @@ NES
 NIA
 NIGMS
 NIMH
+nolint
 noncommercially
 ORCID
 orcid
@@ -117,6 +123,7 @@ WIPO
 www
 xiaolu
 Xiaolu
+XXXX
 yml
 zhang
 Zhang
