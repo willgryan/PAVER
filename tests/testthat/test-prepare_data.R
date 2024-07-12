@@ -6,8 +6,7 @@ library(magrittr)
 library(umap)
 
 test_that("prepare_data function works with mock data", {
-
-  #Mock input data
+  # Mock input data
   mock_input <- data.frame(
     GOID = paste0("GO:", sprintf("%07d", 1:250)),
     GroupA = rnorm(250),
@@ -48,5 +47,3 @@ test_that("prepare_data function works with mock data", {
   expect_equal(nrow(result$goterms_df), nrow(mock_input))
   expect_equal(ncol(result$goterms_df), 2) # Columns: GOID and TermName
 })
-
-

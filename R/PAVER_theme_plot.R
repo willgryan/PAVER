@@ -12,17 +12,18 @@
 #' TRUE
 #'
 #' @export
-PAVER_theme_plot <- function(PAVER_result, show_cluster_legend=TRUE) {
-
-  plot = PAVER_result$umap$layout %>%
+PAVER_theme_plot <- function(PAVER_result, show_cluster_legend = TRUE) {
+  plot <- PAVER_result$umap$layout %>%
     tibble::as_tibble(rownames = NA, .name_repair = "universal_quiet") %>%
     tibble::rownames_to_column("UniqueID") %>%
     dplyr::rename_with(.cols = 2:3, ~ c("UMAP1", "UMAP2")) %>%
     dplyr::inner_join(PAVER_result$clustering %>%
-                        dplyr::select(.data$UniqueID, .data$Group, .data$Cluster), by = "UniqueID") %>%
-    ggplot2::ggplot(ggplot2::aes(x = .data$UMAP1,
-                                 y = .data$UMAP2,
-                                 colour = .data$Cluster)) +
+      dplyr::select(.data$UniqueID, .data$Group, .data$Cluster), by = "UniqueID") %>%
+    ggplot2::ggplot(ggplot2::aes(
+      x = .data$UMAP1,
+      y = .data$UMAP2,
+      colour = .data$Cluster
+    )) +
     ggplot2::geom_point(ggplot2::aes(shape = .data$Group)) +
     ggplot2::scale_color_manual(values = PAVER_result$colors) +
     ggprism::theme_prism(base_size = 9) +
@@ -35,9 +36,9 @@ PAVER_theme_plot <- function(PAVER_result, show_cluster_legend=TRUE) {
       axis.ticks.y = ggplot2::element_blank(),
       legend.position = "bottom",
       legend.direction = "horizontal",
-      legend.spacing.y = grid::unit(-1, 'mm'),
-      legend.spacing.x = grid::unit(-1, 'mm'),
-      legend.box.spacing = grid::unit(-1, 'mm'),
+      legend.spacing.y = grid::unit(-1, "mm"),
+      legend.spacing.x = grid::unit(-1, "mm"),
+      legend.box.spacing = grid::unit(-1, "mm"),
       legend.key.spacing.x = grid::unit(-1, "mm"),
       legend.key.spacing.y = grid::unit(-1, "mm"),
       legend.box.margin = ggplot2::margin(),
@@ -50,15 +51,26 @@ PAVER_theme_plot <- function(PAVER_result, show_cluster_legend=TRUE) {
       legend.text = ggplot2::element_text(face = "bold", size = 9, margin = ggplot2::margin(t = 0, r = 0, b = 0, l = 0))
     ) +
     ggplot2::guides(
-      fill = ggplot2::guide_legend(byrow = T,
-                          override.aes = list(size = 2.5)),
-      shape = ggplot2::guide_legend(byrow = T,
-                           override.aes = list(size = 2.5))) +
-    {if (show_cluster_legend) ggplot2::guides(color = ggplot2::guide_legend(
-      byrow = TRUE,
-      ncol = 1,
-      override.aes = list(shape = 15, size = 2.75)
-    )) else ggplot2::guides(color = "none")}
+      fill = ggplot2::guide_legend(
+        byrow = T,
+        override.aes = list(size = 2.5)
+      ),
+      shape = ggplot2::guide_legend(
+        byrow = T,
+        override.aes = list(size = 2.5)
+      )
+    ) +
+    {
+      if (show_cluster_legend) {
+        ggplot2::guides(color = ggplot2::guide_legend(
+          byrow = TRUE,
+          ncol = 1,
+          override.aes = list(shape = 15, size = 2.75)
+        ))
+      } else {
+        ggplot2::guides(color = "none")
+      }
+    }
 
   plot
 }

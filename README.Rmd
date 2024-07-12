@@ -37,7 +37,7 @@ PAVER is designed to work with the output of pathway analysis tools. The package
 
 You may download the latest source release for PAVER [here](https://github.com/willgryan/PAVER/releases/latest). You may also download the latest release of the R Shiny app for the PAVER R package [here](https://github.com/willgryan/PAVER_shiny/releases/latest).
 
-Pre-computed pathway embeddings for use with PAVER are available for download [here](https://github.com/willgryan/PAVER_embeddings). 
+Pre-computed pathway embeddings for use with PAVER are available for download [here](https://github.com/willgryan/PAVER_embeddings).
 
 ## Installation
 
