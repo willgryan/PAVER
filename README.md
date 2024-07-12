@@ -6,6 +6,9 @@
 <!-- badges: start -->
 [![Software DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8156248-blue?logo=github)](https://doi.org/10.5281/zenodo.8156248)
 [![Publication DOI](https://img.shields.io/badge/DOI-10.6026%2F973206300200700-blue?logo=pubmed)](https://doi.org/10.6026/973206300200700)
+[![Build Status](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml/badge.svg)](https://github.com/willgryan/PAVER/actions/workflows/rworkflows.yml)
+![GitHub License](https://img.shields.io/github/license/willgryan/paver)
+![GitHub Release](https://img.shields.io/github/v/release/willgryan/paver)
 
 <!-- badges: end -->
 
