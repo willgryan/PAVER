@@ -12,17 +12,17 @@
 #' @examples
 #' TRUE
 cosine_dissimilarity <- function(mat, root = FALSE) {
-  sim = mat / sqrt(rowSums(mat * mat))
-  sim = sim %*% t(sim)
+  sim <- mat / sqrt(rowSums(mat * mat))
+  sim <- sim %*% t(sim)
 
-  if(root == T) {
-    D_sim = stats::as.dist(suppressWarnings(sqrt(1 - sim)))
+  if (root == T) {
+    D_sim <- stats::as.dist(suppressWarnings(sqrt(1 - sim)))
   } else {
-    D_sim = stats::as.dist(1 - sim)
+    D_sim <- stats::as.dist(1 - sim)
   }
 
-  D_sim[D_sim < 0] = 0 #Precision errors can lead to negative or NA distances
-  D_sim[is.na(D_sim)] = 0
+  D_sim[D_sim < 0] <- 0 # Precision errors can lead to negative or NA distances
+  D_sim[is.na(D_sim)] <- 0
 
   D_sim
 }

@@ -2,13 +2,13 @@ Package: PAVER
 Title: PAVER: Pathway Analysis Visualization with Embedding
     Representations
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     person("William G", "Ryan V", , "billyryan543@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-4868-4002"))
 Description: Summary visualization using embedding representations to
     reveal underlying themes within sets of pathway terms.
 License: GPL (>= 3)
-Imports: 
+Imports:
     circlize,
     ComplexHeatmap,
     dplyr,
@@ -32,12 +32,12 @@ Imports:
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Suggests: 
+Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
-Depends: 
+Depends:
     R (>= 2.10)
 LazyData: true
 Config/testthat/edition: 3

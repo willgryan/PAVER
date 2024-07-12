@@ -12,8 +12,7 @@
 #'
 #' @export
 PAVER_interpretation_plot <- function(PAVER_result) {
-
-  plot = PAVER_result$mds$conf %>%
+  plot <- PAVER_result$mds$conf %>%
     tibble::as_tibble() %>%
     dplyr::rename(MDS1 = "D1", MDS2 = "D2") %>%
     ggplot2::ggplot(ggplot2::aes(
@@ -28,5 +27,4 @@ PAVER_interpretation_plot <- function(PAVER_result) {
     ggpubr::theme_pubr(legend = "right")
 
   plot
-
 }

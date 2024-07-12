@@ -14,14 +14,15 @@
 #' TRUE
 #'
 #' @export
-PAVER_combined_plot <- function(PAVER_result, unit=NULL) {
-  plot = ggpubr::ggarrange(
+PAVER_combined_plot <- function(PAVER_result, unit = NULL) {
+  plot <- ggpubr::ggarrange(
     PAVER_theme_plot(PAVER_result),
     PAVER_regulation_plot(PAVER_result),
     PAVER_interpretation_plot(PAVER_result),
     grid::grid.grabExpr(plot(PAVER_hunter_plot(PAVER_result))),
-    ncol= 2,
+    ncol = 2,
     nrow = 2,
-    labels = "AUTO")
+    labels = "AUTO"
+  )
   plot
 }

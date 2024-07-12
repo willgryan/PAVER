@@ -3,8 +3,7 @@ library(ggplot2)
 library(ggpubr)
 
 test_that("PAVER_interpretation_plot works correctly", {
-
-  #Mock input data
+  # Mock input data
   mock_input <- data.frame(
     GOID = paste0("GO:", sprintf("%07d", 1:250)),
     GroupA = rnorm(250),

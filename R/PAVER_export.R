@@ -15,17 +15,17 @@
 #'
 #' @export
 PAVER_export <- function(PAVER_result) {
-
-  result = PAVER_result$prepared_data %>%
+  result <- PAVER_result$prepared_data %>%
     dplyr::select(.data$GOID, .data$Group, .data$value) %>%
     dplyr::inner_join(PAVER_result$clustering %>%
-                        dplyr::select(.data$GOID, .data$Cluster) %>%
-                        dplyr::distinct(.data$GOID, .keep_all = T), by = "GOID") %>%
+      dplyr::select(.data$GOID, .data$Cluster) %>%
+      dplyr::distinct(.data$GOID, .keep_all = T), by = "GOID") %>%
     dplyr::inner_join(PAVER_result$goterms_df, by = "GOID") %>%
     tidyr::pivot_wider(names_from = .data$Group, values_from = .data$value) %>%
     dplyr::mutate(dplyr::across(
       .cols = c(!.data$GOID, !.data$Cluster, !.data$Term),
-      .fns = ~ tidyr::replace_na(.x, 0)))
+      .fns = ~ tidyr::replace_na(.x, 0)
+    ))
 
   result
 }

@@ -9,8 +9,7 @@ library(randomcoloR)
 
 # Mock unit test for the generate_themes function
 test_that("generate_themes function works with mock PAVER_result", {
-
-  #Mock input data
+  # Mock input data
   mock_input <- data.frame(
     GOID = paste0("GO:", sprintf("%07d", 1:250)),
     GroupA = rnorm(250),
@@ -43,4 +42,3 @@ test_that("generate_themes function works with mock PAVER_result", {
   expect_true("mds" %in% names(result))
   expect_true("colors" %in% names(result))
 })
-
