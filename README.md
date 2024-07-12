@@ -4,7 +4,9 @@
 # PAVER: Pathway Analysis Visualization with Embedding Representations
 
 <!-- badges: start -->
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8156248.svg)](https://doi.org/10.5281/zenodo.8156248)
+[![Software DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8156248-blue?logo=github)](https://doi.org/10.5281/zenodo.8156248)
+[![Publication DOI](https://img.shields.io/badge/DOI-10.6026%2F973206300200700-blue?logo=pubmed)](https://doi.org/10.6026/973206300200700)
+
 <!-- badges: end -->
 
 PAVER allows for summary interpretation and visualization of pathway
