@@ -1,4 +1,4 @@
-name: rworkflows
+name: Continuous Integration
 on:
   workflow_dispatch:
   push:
