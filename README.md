@@ -106,6 +106,16 @@ questions, please contact <William.Ryan2@rockets.utoledo.edu>.
 For the corresponding author, please contact
 <robert.mccullumsmith@utoledo.edu>.
 
+## Citation
+
+If you use PAVER in your work, please cite the following article:
+
+*[Interpreting and visualizing pathway analyses using embedding
+representations with
+PAVER](https://www.bioinformation.net/020/973206300200700.pdf)* *[Ryan
+et al. Bioinformation 20(7): 700-704
+(2024)](https://www.bioinformation.net/020/973206300200700.pdf)*
+
 ## Contributing
 
 We welcome anyone wishing to contribute, report issues or seek support

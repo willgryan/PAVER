@@ -82,6 +82,13 @@ For technical issues, please start a new issue on this [repository](https://gith
 
 For the corresponding author, please contact [robert.mccullumsmith@utoledo.edu](mailto:robert.mccullumsmith@utoledo.edu).
 
+## Citation
+
+If you use PAVER in your work, please cite the following article:
+
+_[Interpreting and visualizing pathway analyses using embedding representations with PAVER](https://www.bioinformation.net/020/973206300200700.pdf)_
+_[Ryan et al. Bioinformation 20(7): 700-704 (2024)](https://www.bioinformation.net/020/973206300200700.pdf)_
+
 ## Contributing
 
 We welcome anyone wishing to contribute, report issues or seek support for PAVER. Please note, PAVER is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
