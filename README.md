@@ -112,8 +112,8 @@ If you use PAVER in your work, please cite the following article:
 
 *[Interpreting and visualizing pathway analyses using embedding
 representations with
-PAVER](https://www.bioinformation.net/020/973206300200700.pdf)* *[Ryan
-et al. Bioinformation 20(7): 700-704
+PAVER](https://www.bioinformation.net/020/973206300200700.pdf)*  
+*[Ryan et al. Bioinformation 20(7): 700-704
 (2024)](https://www.bioinformation.net/020/973206300200700.pdf)*
 
 ## Contributing
